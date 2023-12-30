@@ -1,5 +1,5 @@
 <h3>予定一覧</h3>
-<p><%= link_to "ユーザー新規追加", :new_post %></p>
+<p><%= link_to "新規追加", :new_post %></p>
 <table>
 <thead>
     <tr>
@@ -17,10 +17,16 @@
     <tr>
         <td><%= post.id %></td>
         <td><%= post.title %></td>
-        <td><%= post.start_date %></td>
-        <td><%= post.end_date %></td>
-        <td><%= post.checkbox %></td>
-        <td><%= post.updated_at %></td>
+        <td><%= post&.start_date&.strftime('%Y/%m/%d') %></td>
+        <td><%= post&.end_date&.strftime('%Y/%m/%d') %></td>
+        <td>
+        <% if post.checkbox == 1 %>
+            <%= '○' %>
+        <% else %>
+            <%= '' %>
+        <% end %>
+        </td>
+        <td><%= post.updated_at.to_s(:datetime_jp) %></td>
     </tr>
     <% end %>
 </tbody>

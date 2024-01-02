@@ -1,7 +1,7 @@
-<h3><%= link_to "一覧に戻る", :posts %></h3>
-<h3><%= link_to "編集", [:edit, @post] %></h3>
+<h3 class="back"><%= link_to "一覧に戻る", :posts %></h3>
+<h3 class="show-edit"><%= link_to "編集", [:edit, @post] %></h3>
 
-<table>
+<table class="show-table">
    <tr>
      <th>タイトル</th>
      <td><%= @post.title %></td>
@@ -18,4 +18,4 @@
      <th>スケジュールメモ</th>
      <td><%= @post.content %></td>
    </tr>
- </table>
+</table>

@@ -36,6 +36,8 @@ h1 {
 table {
     margin: auto;
     border-collapse: collapse;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
 }
 
 thead th {
@@ -61,19 +63,84 @@ tbody td {
 .count {
     display: flex;
     justify-content: center;
-    gap:600px;
+    gap:450px;
 }
 
-// 編集
+// 新規、編集
 
 .each-post {
-    width: 30%;
+    width: 50%;
+    max-width: 100%;
     margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: #e9faf9;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    line-height: 1;
 }
 
 .each-post > div {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.each-post-content {
+    // margin-left: 77px;
     text-align: center;
 }
 
+.each-post-content p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
 
+.text {
+    text-align: left;
+    margin-left:30%;
+}
+
+.form-controll{
+    width:80%;
+}
+
+.date {
+    display: flex;
+    justify-content: left;
+    margin-left: 30%;
+    gap:20px;
+}
+
+.save {
+    display: flex;
+    justify-content: right;
+    margin-right: 30%;
+    gap:20px;
+}
+
+// 詳細
+.back {
+    width:50%;
+    text-align: center;
+    padding-left: var(--bs-gutter-x,.75rem);
+}
+.show-edit {
+    width:70%;
+    text-align: right;
+}
+
+.show-table th {
+    background-color: #778ca3;
+}
+
+// タブレット
+@media(max-width: 1024px) {
+    .each-post {
+        width:80%;
+    }
+    .date {
+        display: block;
+        text-align: left;
+        margin-left:30%;
+    }
+}

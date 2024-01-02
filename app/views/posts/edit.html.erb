@@ -1,40 +1,40 @@
-<h3>編集</h3>
+<h3 class="back">編集</h3>
 
 <%= render "shared/error", obj: @post %>
 
 <%= form_with model: @post do |f| %>
   <div class="each-post">
-    <div>
-      <%= f.label :title ,"タイトル" %>
-      <%= f.text_field :title %>
+    <div class="each-post-content text">
+      <p><%= f.label :title ,"タイトル" %></p>
+      <p class="form-controll"><%= f.text_field :title %></p>
     </div>
 
-    <div>
-      <%= f.label :start_date ,"開始日" %>
-      <%= f.date_field :start_date %>
+    <div class="date">
+      <div>
+        <p><%= f.label :start_date ,"開始日" %></p>
+        <p><%= f.date_field :start_date %></p>
+      </div>
+      <div>
+        <p><%= f.label :end_date ,"終了日" %></p>
+        <p><%= f.date_field :end_date %></p>
+      </div>
     </div>
 
-    <div>
-      <%= f.label :end_date ,"終了日" %>
-      <%= f.date_field :end_date %>
+    <div class="each-post-content text">
+      <p><%= f.check_box :checkbox, id: :checkbox,:as => :boolean %>
+      <%= label_tag :checkbox, "終日の場合はチェックを入れます" %></p>
     </div>
 
-    <div class="checkbox">
-      <%= f.check_box :checkbox, id: :checkbox,:as => :boolean %>
-      <%= label_tag :checkbox, "終日の場合はチェックを入れます" %>
+    <div class="each-post-content text">
+      <p><%= f.label :content ,"スケジュールメモ" %></p>
+      <p><%= f.text_area :content %></p>
     </div>
 
-    <div>
-      <%= f.label :content ,"スケジュールメモ" %>
-      <%= f.text_area :content %>
-    </div>
+    <div class="save">
+      <p><%= link_to "キャンセル", :posts %></p>
+      <p><%= f.submit "保存"%></p>
+  </div>
 
   </div>
 
-  <div>
-    <ul>
-      <li><%= f.submit "保存"%></li>
-      <li><%= link_to "キャンセル", :posts %></li>
-    </ul>
-  </div>
 <% end %>

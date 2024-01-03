@@ -21,7 +21,7 @@
     </div>
 
     <div class="each-post-content text">
-      <p><%= f.check_box :checkbox, id: :checkbox,:as => :boolean %>
+      <p><%= f.check_box :checkbox, id: :checkbox %>
       <%= label_tag :checkbox, "終日の場合はチェックを入れます" %></p>
     </div>
 
@@ -31,8 +31,8 @@
     </div>
 
     <div class="save">
-      <p><%= link_to "キャンセル", :posts %></p>
-      <p><%= f.submit "保存"%></p>
+      <p class="button cansell"><%= link_to "キャンセル", :posts, class:"link" %></p>
+      <p><%= f.submit "保存", class:"button button-save" %></p>
   </div>
 
   </div>

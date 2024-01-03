@@ -18,11 +18,32 @@ h1 {
     padding-bottom: 15px;
 }
 
+.link {
+    text-decoration: none;
+    color:inherit;
+}
+
+.button {
+    background-color:#c6f6f3;
+    border-radius: 10%;
+    padding:10px;
+    color:rgb(97, 96, 103);
+    transition: 0.3s;
+}
+
+.button:hover {
+    filter: brightness(0.8);
+}
+
 .top-list {
     width: 100%;
     display: flex;
     justify-content: center;
     gap:600px;
+}
+
+.notice {
+    margin-left: 22%;
 }
 
 // .top-list h3 {
@@ -61,20 +82,30 @@ tbody td {
 }
 
 .count {
+    position: relative;
+    margin-top:30px;
     display: flex;
     justify-content: center;
-    gap:450px;
+    gap:430px;
 }
-
+.count-background {
+    z-index:-1;
+    height:80px;
+    width:760px;
+    padding-bottom:10px;
+    position: absolute;
+    background-color: #c6f6f3;
+}
 // 新規、編集
 
 .each-post {
     width: 50%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 10px auto;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: #e9faf9;
+    background-color: #e9faf9;
+    border-radius: 4px;
     padding-right: var(--bs-gutter-x,.75rem);
     padding-left: var(--bs-gutter-x,.75rem);
     line-height: 1;
@@ -118,23 +149,52 @@ tbody td {
     gap:20px;
 }
 
-// 詳細
-.back {
-    width:50%;
-    text-align: center;
-    padding-left: var(--bs-gutter-x,.75rem);
-}
-.show-edit {
-    width:70%;
-    text-align: right;
+.cansell {
+    background-color: #e9faf9;
+    border: 1px solid #95adc7;
 }
 
+.button-save {
+    border:none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+// 詳細
+.back {
+    margin-bottom:0;
+    display: inline-block;
+    margin-left: 20%;
+}
+.div-show {
+    text-align: right;
+    margin-top:0;
+    margin-right:30%;
+}
+.show-edit {
+    display: inline-block;
+}
 .show-table th {
+    padding:5px 10px;
     background-color: #778ca3;
+}
+.show-table td {
+    padding:5px 10px;
 }
 
 // タブレット
 @media(max-width: 1024px) {
+    .notice {
+        margin-left: 10%;
+    }
+    .top-list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap:600px;
+    }
+
+    // 新規、編集
     .each-post {
         width:80%;
     }
@@ -142,5 +202,14 @@ tbody td {
         display: block;
         text-align: left;
         margin-left:30%;
+    }
+}
+
+@media(max-width: 767px) {
+    .top-list {
+        gap:70%;
+    }
+    .count {
+        gap:50%;
     }
 }

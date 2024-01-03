@@ -1,7 +1,7 @@
 
 <div class="top-list">
 <h3>予定一覧</h3>
-<p><%= link_to "新規追加", :new_post %></p>
+<p class="button"><i class="fa-solid fa-pencil"></i><%= link_to "新規追加", :new_post, class:"link" %></p>
 </div>
 
 <% if flash[:notice] %>
@@ -56,6 +56,7 @@
 
 <div class="count">
     <h3><%= "予定合計　#{Post.count}件" %></h3>
-    <p><%= "本日の日付#{Date.today.strftime('%Y/%m/%d')}" %></p>
+    <p><%= "本日の日付：#{Date.today.strftime('%Y/%m/%d')}" %></p>
+    <div class="count-background">　</div>
 </div>
  
